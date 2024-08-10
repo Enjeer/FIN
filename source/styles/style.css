@@ -7,13 +7,13 @@ AUTH
 
 :root{
     /*  */
-    --app-color:       #1E1E1E;
-    --title:           #151515;
-    --title-hover:     #222222;
+    --app-color:       linear-gradient(120deg, #b4b4b4 0%, #b7b7b7 31%, #979797 92%, #808080 100%);
+    --title:           #767676;
+    --title-hover:     #626262;
     --warning:         #CF3434;
 }
 body{
-    background-color: var(--app-color);
+    background: var(--app-color);
     padding: 0;
     margin: 0;
     background-repeat: no-repeat;
@@ -26,6 +26,7 @@ body{
     flex-direction: row;
     /* justify-content: space-between; */
     -webkit-app-region: drag;
+    padding: 0 0 0 8px;
 }
 .cet-window-controls{
     display: flex;
@@ -61,10 +62,23 @@ body{
     height: 100%;
 }
 .app_container{
-    display: flex !important;
+    background: url('../img/background-noise-effect.png');
+    background-size: cover;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: calc(100svh);
     margin: 0;
+}
+.decorative-content-zone{
+    height: 90%;
+    aspect-ratio: 1.055480378890392/1;
+    margin-top: -6%;
+    /* background-color: #CF3434; */
+    aspect-ratio: 1.055480378890392/1;
+    background: url('../img/inner-bg.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }

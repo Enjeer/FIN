@@ -12,19 +12,19 @@ const path = require('path');
 // modify your existing createWindow() function
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 620,
-    height: 600,
-    minWidth: 500,
-    minHeight: 450,
-    // frame: false,
+    width: 500,
+    height: 500,
+    frame: false,
+    resizable: false,
     // titleBarOverlay: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: true,
       devTools: true,
       sandbox: false,
-      preload: path.join(__dirname, 'preload.js')
-    }
+      preload: path.join(__dirname, 'preload.js'),
+    },
+    aspectRatio: 16 / 9
   });
 
   mainWindow.loadFile('./source/index.html');
