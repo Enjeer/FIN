@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const options = {
     backgroundColor: TitlebarColor.fromHex('#151515'),
     closeable: true,
-    icon:  path.join(__dirname, '/source/img/Logo.png')
+    icon:  path.join(__dirname, '/source/img/Logo.png'), 
     // icons: {
     //   minimize: './source/img/minimize.png',
     //   maximize: './source/img/maximize.png',
