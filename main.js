@@ -12,10 +12,11 @@ const path = require('path');
 // modify your existing createWindow() function
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 500,
-    height: 500,
+    width: 520,
+    height: 520,
+    minWidth: 500,
+    minHeight: 500,
     frame: false,
-    resizable: false,
     // titleBarOverlay: true,
     webPreferences: {
       nodeIntegration: true,

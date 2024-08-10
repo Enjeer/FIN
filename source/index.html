@@ -5,14 +5,23 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <!-- <title>Finn - your virtual assistant</title> -->
+     
+    <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
     <div class="app_container">
-      <div class="decorative-content-zone">
-        
-      </div>
+      <div class="decorative"></div>
+        <!-- <div class="edition-naming">.DEV</div>  -->
+        <div class="launch-container content-container" id="loading-container" aria-hidden="false">
+          <input class="launch_button" type="button" id="loading-screen-button" value="LAUNCH">
+        </div>
+        <div class="main-container content-container" id="main-container">
+          <input class="launch_button" type="button" id="main-screen-button" value="LAUNCHED">
+
+          <span id="text-zone-for-assistant">loremIpsum</span>
+        </div>
     </div>
     <script src="./renderer.js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./fr-scripts/screen-swap.js"></script>
   </body>
 </html>
