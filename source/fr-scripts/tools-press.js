@@ -1,8 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
     const t_btn = document.getElementById("tools_btn"),
+          m_btn = document.getElementById("menu_btn"),
           a_btn = document.getElementById("assist_btn");
 
-    const list_ = [t_btn, a_btn];
+    const list_ = [t_btn, m_btn, a_btn];
 
     const swap = (btn, list) => {
         if (!btn.classList.contains("active")) {

@@ -7,31 +7,39 @@
     <!-- <title>Finn - your virtual assistant</title> -->
      
     <link rel="stylesheet" href="./styles/style.css">
-  </head>
+
+    
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQKn2iQoB+fR5ZMEAPSKkFJZ3ie5B5i8DAozDtr1skJfuSVw/JjwB7biX" crossorigin="anonymous">
+</head>
   <body>
     <div class="app_container">
       <div class="decorative"></div>
         <div class="edition-naming">.DEV</div> 
+
+        <div class="tools-container">
+          <div role="button" id="menu_btn" class="tool-button passive">
+            <span class="menu-button-text">menu</span>
+          </div>
+          <div role="button" id="assist_btn" class="tool-button active">
+            <span class="menu-button-text">Assist</span>
+          </div>
+          <div role="button" id="tools_btn" class="tool-button passive">
+            <span class="menu-button-text">Tools</span>
+          </div>
+        </div>
+
         <div class="wrapper-container" id="loading-container" aria-hidden="false">
           <div class="content-container">
             <input class="launch_button" type="button" id="loading-screen-button" value="swap">
           </div>
         </div>
+
         <div class="wrapper-container" id="main-container">
           <div class="content-container">
-            <div class="tools-container">
-              <div role="button" id="menu_btn" class="menu-button tool-button">
-                <span class="menu-button-text">menu</span>
-              </div>
-              <div role="button" id="assist_btn" class="tool-button active">
-                <span class="menu-button-text">Assist</span>
-              </div>
-              <div role="button" id="tools_btn" class="tool-button passive">
-                <span class="menu-button-text">Tools</span>
-              </div>
-            </div>
-            <input class="launch_button" type="button" id="main-screen-button" value="swap">
-            <span id="text-zone-for-assistant">This zone will be later slyled and used by Assistant.</span>  
+            <input class="launch_button" type="button" id="main-screen-button" value="Listen">
+            <span id="text-zone-for-user">This zone will be later styled and used by user.</span>  
+            <span id="text-zone-for-assistant">This zone will be later styled and used by Assistant.</span>  
             <div class="deco-element-bottom">
             </div>
           </div>
@@ -39,6 +47,8 @@
     </div>
     <script src="./renderer.js"></script>
     <script src="./fr-scripts/tools-press.js"></script>
-    <script src="./fr-scripts/screen-swap.js"></script>
-  </body>
+    
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-7r2XcoE3YBuS9HrTYfF8EJ0SzG1Q6Fh3K4QErRszGh8z/2SnSe+TZ+a4lW7fa6EV" crossorigin="anonymous"></script>
+</body>
 </html>
