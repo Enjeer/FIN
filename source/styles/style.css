@@ -12,6 +12,9 @@ AUTH
     --title:           #767676;
     --title-hover:     #626262;
     --warning:         #CF3434;
+    --accent:          #F8A151;
+    --second-accent:   #F78923;
+    --main-font:       'Neue-Regrade';
 }
 
  @font-face { font-family: Neue-Regrade; src: url('../font/Neue-Regrade-Variable-BF65af35d87b6a7.ttf'); }
@@ -22,10 +25,7 @@ body{
     padding: 0;
     margin: 0;
     background-repeat: no-repeat;
-    overflow: hidden;   
-    outline: solid 3px black;
-    outline-offset: -2px;
-    border-radius: 8px;
+    /* overflow: hidden;    */
 }
 .cet-titlebar{
     width: fill;
@@ -72,7 +72,7 @@ body{
 }
 .app_container{
     background: url('../img/background-noise-effect.png');
-    background-size: cover;
+    background-size: 400px 400px;
     display: flex;
     justify-content: left;
     align-items: flex-end;
@@ -100,20 +100,34 @@ body{
     font-family: 'Neue-Regrade';
     font-weight: 700;
 }
-.content-container{
+.wrapper-container{
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     outline: 2px solid black;
     outline-offset: -12px;
     border-radius: 15px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 235px 100%, 235px calc(100% - 52px), 0 calc(100% - 52px));
 }
-.launch-container{
+#loading-container{
+    display: none;
+}
+#main-container{
+    display: flex;
+}
+
+
+
+.content-container{
+    margin: 12px;
+    padding: 10px;
+    width: fill;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
 }
+
+
 .launch_button{
     width: 20%;
     aspect-ratio: 1/1;
@@ -130,20 +144,78 @@ body{
     background-color: #8e8e8e;
     border-radius: 5px;
 }
-.main-container{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+
+.tools-container{
+    display: flex;
+    justify-content: space-between;
+    width: calc(65px*3 + 15px);
+}
+
+.tool-button{
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 65px;
+    height: 28px;
+    border: solid 2px black;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    margin: 0 0 20px;
+    
+    box-shadow: 0px 2px 0px black;
+    transform: translate(-0px, -2px);
+
+
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .15s ease-in-out;
 }
+.tool-button:hover{
+    background-color: var(--second-accent);
+}
+.tool-button:active{
+    box-shadow: 0px 0px 0px black;
+    transform: translate(-0px, -0px);
+}
+.menu-button{
+    background-color: var(--accent);
+}
+.menu_button:hover{
+    background-color: var(--second-accent);
+}
+.active{
+    background-color: var(--second-accent);
+    box-shadow: 0px 0px 0px black;
+    transform: translate(-0px, -0px);
+}
+.passive{
+    background-color: #c0c0c0;
+}
+
 #text-zone-for-assistant{
-    font-family: 'Neue-Regrade';
-    margin-top: 10px;
-    width: 90%;
+    font-family: var(--main-font);
+    margin: 10px auto 0;
+    width: 95%;
     height: 30%;
     background-color: black;
     color: white;
     border-radius: 5px;
+}
+
+.deco-element-bottom{
+    background: url('../img/colors-bottom.png');
+    background-size: contain;
+    background-position: center center;
+    /* background-repeat: no-repeat; */
+
+    width: 30svw;
+    aspect-ratio: 9/1;
+    margin-top: auto;
+    
+    align-self: flex-end;
 }
