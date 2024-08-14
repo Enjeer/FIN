@@ -1,7 +1,8 @@
 from sklearn.feature_extraction.text import CountVectorizer     #pip install scikit-learn
 from sklearn.linear_model import LogisticRegression
 import sounddevice as sd    #pip install sounddevice
-import vosk                 #pip install vosk
+import vosk            #pip install vosk
+import sys
 
 import json
 import queue
