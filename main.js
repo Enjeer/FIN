@@ -1,5 +1,5 @@
-//main.js
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron'); // Include ipcMain here
+const { spawn } = require('child_process'); // Import spawn to run Python scripts
 
 // main process setup title bar
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
@@ -7,7 +7,6 @@ const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-title
 setupTitlebar();
 // include the Node.js 'path' module at the top of your file
 const path = require('path');
-
 
 // modify your existing createWindow() function
 const createWindow = () => {
@@ -17,13 +16,12 @@ const createWindow = () => {
     minWidth: 500,
     minHeight: 500,
     frame: false,
-    // titleBarOverlay: true,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: true,
       devTools: true,
       sandbox: false,
       preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true
     },
     aspectRatio: 16 / 9
   });
@@ -42,4 +40,29 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
+});
+
+// IPC Handler for running Python scripts
+ipcMain.handle('run-python-script', async () => {
+  return new Promise((resolve, reject) => {
+    const scriptPath = path.join(__dirname, 'source/python_scripts/app.py'); // Ensure this path is correct
+    const pyProg = spawn('python', [scriptPath]);
+
+    let data = '';
+    pyProg.stdout.on('data', (stdout) => {
+      data += stdout.toString();
+    });
+
+    pyProg.stderr.on('data', (stderr) => {
+      console.error(`stderr: ${stderr}`);
+    });
+
+    pyProg.on('close', (code) => {
+      if (code === 0) {
+        resolve(data);
+      } else {
+        reject(new Error(`Process exited with code ${code}`));
+      }
+    });
+  });
 });

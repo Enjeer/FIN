@@ -1,0 +1,25 @@
+
+// Finn/
+//   node_modules/
+//   source/
+//     __pycache__
+//     font
+//     fr-scripts/
+//       tools-permission.js
+//     img
+//     merge-scripts/
+//       listener.js
+//     python_scripts/
+//       __pycache__
+//       app.py
+//       skills.py
+//       voice.py
+//       words.py
+//     styles/
+//       style.css
+//     index.html
+//   forge.config.js
+//   main.js
+//   package-lock.json
+//   package.json
+//   preload.js

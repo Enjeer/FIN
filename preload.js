@@ -1,9 +1,14 @@
 //preload.js
 
 const { Titlebar, Color, TitlebarColor } = require('custom-electron-titlebar');
+const { contextBridge, ipcRenderer } = require('electron');
 
 const path = require('path');
 const { title } = require('process');
+
+contextBridge.exposeInMainWorld('api', {
+  runPythonScript: (scriptPath, args) => ipcRenderer.invoke('run-python-script', { scriptPath, args })
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
