@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const field = document.getElementById('text-zone-for-assistant');
 
   button.addEventListener('click', async () => {
+    field.textContent = 'bober';
     try {
-      const output = await window.api.runPythonScript();
+      const output = await window.api.runPythonScript('..\python_scripts\app.py');
       field.textContent = output;
     } catch (error) {
       console.error('Error:', error);

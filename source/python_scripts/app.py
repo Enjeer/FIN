@@ -18,12 +18,13 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 q = queue.Queue()
 
-model = vosk.Model('model_small')       
+model = vosk.Model(r'C:\Main\Finn - Assistant\source\python_scripts\model-small')   
                                     
 
-device = sd.default.device     
+device = sd.default.device
                                 
 samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate'])  
+# print(sd.query_devices())
 
 
 def callback(indata, frames, time, status):

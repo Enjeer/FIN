@@ -7,12 +7,15 @@
     <!-- <title>Finn - your virtual assistant</title> -->
      
     <link rel="stylesheet" href="./styles/style.css">
-
 </head>
   <body>
     <div class="app_container">
-      <div class="decorative"></div>
-        <div class="edition-naming">.DEV</div> 
+      <!-- <div class="decorative"></div>
+        <div class="edition-naming">.DEV</div>  -->
+
+        <div class="settings-wrapper">
+          <div class="settings-wrapper-buttons-container"></div>
+        </div>
 
         <div class="tools-container">
           <div role="button" id="menu_btn" class="tool-button passive">
@@ -26,13 +29,7 @@
           </div>
         </div>
 
-        <div class="wrapper-container" id="loading-container" aria-hidden="false">
-          <div class="content-container">
-            <input class="launch_button" type="button" id="loading-screen-button" value="swap">
-          </div>
-        </div>
-
-        <div class="wrapper-container" id="main-container">
+        <div class="wrapper-container" id="assistant-container">
           <div class="content-container">
             <input class="launch_button" type="button" id="main-screen-button" value="Listen">
             <input type="text" id="text-zone-for-user" placeholder="This zone will be later styled and used by user.">
@@ -41,6 +38,19 @@
             </div>
           </div>
         </div>
+
+        <div class="wrapper-container" id="menu-container">
+          <div class="content-container">
+            <input class="launch_button" type="button" id="loading-screen-button" value="swap">
+          </div>
+        </div>
+
+        <div class="wrapper-container" id="tools-container">
+          <div class="content-container">
+            <input class="launch_button" type="button" id="loading-screen-button" value="swap">
+          </div>
+        </div>
+
     </div>
     <script src="./merge-scripts/listener.js"></script>
     <script src="./fr-scripts/tools-press.js"></script>

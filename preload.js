@@ -21,14 +21,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const options = {
-    backgroundColor: TitlebarColor.fromHex('#767676'),
+    backgroundColor: TitlebarColor.fromHex('#191920'),
     closeable: true,
     icon:  path.join(__dirname, '/source/img/secondLOGO.png'), 
     // icons: {
-    //   minimize: './source/img/minimize.png',
-    //   maximize: './source/img/maximize.png',
-    //   restoreDown: './source/img/restore.png',
-    //   close: './source/img/close.png'
+    //   minimize: path.join(__dirname, '/source/img/minimize.png'),
+    //   maximize: path.join(__dirname, '/source/img/maximize.png'),
+    //   restoreDown: path.join(__dirname, '/source/img/restore.png'),
+    //   close: path.join(__dirname, '/source/img/close.png')
     // }
   };
 
